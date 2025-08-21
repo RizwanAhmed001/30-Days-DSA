@@ -71,3 +71,22 @@
 
 // let nums = [0,1,0,3,12]
 // console.log(moveZeroes(nums))
+
+// #121 Best Time to Buy and Sell Stock
+function maxProfit(prices) {
+    let minPrice = Infinity;  
+    let maxProfit = 0;       
+
+    for (let price of prices) {
+        if (price < minPrice) {
+            minPrice = price;        
+        } else if (price - minPrice > maxProfit) {
+            maxProfit = price - minPrice; 
+        }
+    }
+
+    return maxProfit;
+};
+
+const prices = [7,6,4,3,1];
+console.log(maxProfit(prices));
